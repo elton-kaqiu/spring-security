@@ -1,0 +1,12 @@
+        Optional.ofNullable(authHeader)
+                .filter(header->header.startsWith("Bearer "))
+                .ifPresentOrElse(
+                        header->{},()->{
+                            try {
+                                filterChain.doFilter(request,response);
+                            } catch (IOException | ServletException e) {
+                                throw new RuntimeException(e);
+                            }
+                            return ;
+                        }
+                );
