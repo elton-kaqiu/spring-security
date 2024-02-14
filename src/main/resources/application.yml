@@ -14,3 +14,5 @@ spring:
     show-sql: true
     database: postgresql
 
+secret:
+  key: "34767265344c5762356e646b767074726c374e625633614f4b7938476d483766"
